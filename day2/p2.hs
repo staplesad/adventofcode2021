@@ -14,8 +14,8 @@ getDim :: Int -> [(String, Int)] -> (Int, Int)
 getDim _ [] = (0, 0)
 getDim aim ((dir, mag):xs)
   | dir == "forward" = addTuples (mag, mag*aim) (getDim aim xs)
-  | dir == "up" = addTuples (0, 0) (getDim (aim - mag) xs)
-  | dir == "down" = addTuples (0, 0) (getDim (aim + mag) xs)
+  | dir == "up" = getDim (aim - mag) xs
+  | dir == "down" = getDim (aim + mag) xs
 
 solve :: String -> (Int, Int)
 solve str
