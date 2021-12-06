@@ -10,7 +10,7 @@ def step(counter):
     return new_counter
 
 def multi_step(counter, n_days):
-    for i in range(n_days):
+    for _ in range(n_days):
         counter = step(counter)
     return counter
 

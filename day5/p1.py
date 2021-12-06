@@ -22,7 +22,6 @@ def solve(filename):
     with open(filename) as fp:
         for line in fp:
             start, end = map(str2tup, line.split('->'))
-            new_points = expand(start, end)
             for point in expand(start, end):
                 if point in marked:
                     if not point in overlap:
